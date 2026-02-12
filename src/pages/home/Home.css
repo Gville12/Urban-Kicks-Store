@@ -1,0 +1,269 @@
+.home-page {
+  padding: 5rem 1.5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  flex: 1 1 260px;
+  max-width: 620px;
+}
+
+.hero-tagline {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: #7c3aed;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: #4c1d95;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #6b21a8;
+  max-width: 30rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.primary-button {
+  background-color: #7c3aed;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+  background-color: #6d28d9;
+}
+
+.secondary-button {
+  background-color: #ffffff;
+  color: #7c3aed;
+  border: 1px solid #c4b5fd;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondary-button:hover {
+  background-color: #f5f3ff;
+  border-color: #a78bfa;
+}
+
+
+.hero-highlight {
+  flex: 0 0 260px;
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  color: #ffffff;
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.75rem;
+}
+
+.highlight-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  color: #cccccc;
+}
+
+.highlight-text {
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+.highlight-amount {
+  font-weight: 600;
+}
+
+.sneaker-section {
+  margin-top: 2rem;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #4c1d95;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #6b21a8;
+  max-width: 32rem;
+}
+
+.sneakers-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sneaker-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid #eeeeee;
+  flex: 1 1 240px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sneaker-card:hover {
+  border-color: #c4b5fd;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+}
+
+.sneaker-card-image-wrapper {
+  position: relative;
+  padding: 1rem;
+  background: linear-gradient(145deg, #f8f8f8, #f0f0f0);
+}
+
+.sneaker-card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.sneaker-card-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background-color: #7c3aed;
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sneaker-card-body {
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.sneaker-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sneaker-card-title {
+  font-size: 1.05rem;
+  margin: 0;
+  color: #4c1d95;
+}
+
+.sneaker-card-brand {
+  font-size: 0.8rem;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.sneaker-card-description {
+  font-size: 0.9rem;
+  color: #6b21a8;
+  margin: 0;
+}
+
+.sneaker-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.sneaker-card-price {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #7c3aed;
+}
+
+.sneaker-card-button {
+  border-radius: 999px;
+  border: 1px solid #7c3aed;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background-color: #7c3aed;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sneaker-card-button:hover {
+  background-color: #6d28d9;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-highlight {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page {
+    padding-top: 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .sneakers-grid {
+    flex-direction: column;
+  }
+
+  .sneaker-card {
+    max-width: 100%;
+  }
+}
