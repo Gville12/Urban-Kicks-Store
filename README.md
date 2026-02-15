@@ -1,5 +1,3 @@
-<!-- PROJECT TITLE -->
-
 # UrbanKicks · Sneaker Store Landing Page
 
 This is a small React single-page application that simulates the landing page and basic information pages of a fictional sneaker brand called **UrbanKicks**.
@@ -48,17 +46,6 @@ Some tutorials and articles that inspired or helped build this project:
   - `https://www.shopify.com/es/blog/imagenes-para-web-tamano`
 
 You can add any extra tutorials or resources that you personally used while working on the project.
-
----
-
-## 🎨 Design & Figma Inspiration
-
-The layout and visual style are inspired by modern, minimal sneaker and fashion e‑commerce websites.
-
-- Figma inspiration (replace with your actual design link):
-  - `https://www.figma.com/` (placeholder link)
-
-> **Note:** You should update this section with a direct link to the specific Figma file or template that you used as inspiration for your design.
 
 ---
 
@@ -145,14 +132,6 @@ Some examples of clean code and UX decisions applied in the project:
   - Contact details (email and phone).
   - Contact form (demo only) with fields for name, email, subject and message.
   - Embedded interactive map using React Leaflet, centered on Madrid.
-
----
-
-## 🌿 Images & Assets
-
-- Sneaker images are expected to live in a public `images` folder (e.g. `/public/images/urban-street-runner.jpg`).
-- Make sure to use web‑optimized images to avoid large repository sizes (ideally below a few hundred KB per image).
-- For more details on web image sizing, check: `https://www.shopify.com/es/blog/imagenes-para-web-tamano`
 
 ---
 

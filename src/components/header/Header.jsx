@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import Logo from "../logo/Logo";
 import "./Header.css";
 
 function Header() {
@@ -8,7 +9,7 @@ function Header() {
       <div className="header-inner">
         <div className="header-logo">
           <Link to="/home" className="logo-link">
-            <span className="logo-mark">UK</span>
+            <Logo width={40} height={40} color="#7c3aed" />
             <span className="logo-text">
               Urban<span className="logo-text-bold">Kicks</span>
             </span>

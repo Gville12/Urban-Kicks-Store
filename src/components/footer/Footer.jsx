@@ -29,7 +29,7 @@ function Footer() {
           <div className="footer-column">
             <p className="footer-heading">Project</p>
             <a
-              href="https://github.com/tu-usuario/urban-kicks-store"
+              href="https://github.com/Gville12/Urban-Kicks-Store"
               target="_blank"
               rel="noreferrer"
               className="footer-link"
@@ -37,7 +37,7 @@ function Footer() {
               GitHub repository
             </a>
             <a
-              href="https://www.figma.com/"
+              href="https://www.figma.com/es-es/comunidad/file/1373911621515633358/shoe-store"
               target="_blank"
               rel="noreferrer"
               className="footer-link"
@@ -66,7 +66,7 @@ function Footer() {
                 X
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Gville12"
                 target="_blank"
                 rel="noreferrer"
                 className="social-icon"

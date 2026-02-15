@@ -1,6 +1,6 @@
-// pages/home/Home.jsx
 import { sneakers } from "../../data/sneakers";
 import DestinationCard from "../../components/destination-card/DestinationCard";
+import Map from "../../components/map/Map";
 import "./Home.css";
 
 function Home() {
@@ -50,6 +50,18 @@ function Home() {
               isNew={sneaker.isNew}
             />
           ))}
+        </div>
+      </section>
+
+      <section className="map-section">
+        <div className="section-header">
+          <h2 className="section-title">Visit our Flagship Store</h2>
+          <p className="section-subtitle">
+            Experience UrbanKicks in person.
+          </p>
+        </div>
+        <div className="home-map-wrapper">
+          <Map />
         </div>
       </section>
     </main>
