@@ -135,6 +135,29 @@ Some examples of clean code and UX decisions applied in the project:
 
 ---
 
+## 🎨 Design Reference (Figma)
+
+The visual design and layout inspiration for this project is based on the following Figma community file:
+
+  **Shoe Store – Figma Community Template**
+  https://www.figma.com/es-es/comunidad/file/1373911621515633358/shoe-store
+
+This design was used as a visual reference for:
+
+  - Overall layout structure (hero + featured products + footer)
+
+  - Clean typography and spacing hierarchy
+
+  - Card-based product presentation
+
+  - Minimal and modern e-commerce aesthetics
+
+  - Balanced use of whitespace and content blocks
+
+While the implementation is adapted to fit the UrbanKicks brand concept, the Figma file served as a structural and visual guideline during the UI development process.
+
+---
+
 ## 🌳 Git Branching (main & develop)
 
 To match the assignment requirements, you can use the following simple branching strategy:

@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { sneakers } from "../../data/sneakers";
 import DestinationCard from "../../components/destination-card/DestinationCard";
 import Map from "../../components/map/Map";
+import Promo from "../../components/promo/Promo";
 import "./Home.css";
 
 function Home() {
+  const [showSpecial, setShowSpecial] = useState(false);
+
   return (
     <main className="home-page">
       <section className="hero-section">
@@ -15,9 +19,12 @@ function Home() {
             and styles made for the city.
           </p>
           <div className="hero-actions">
-            <button className="primary-button">Shop best sellers</button>
+            <button className="primary-button" onClick={() => setShowSpecial(!showSpecial)}>
+              {showSpecial ? "Ver menos" : "Ver oferta especial"}
+            </button>
             <button className="secondary-button">View new arrivals</button>
           </div>
+          {showSpecial && <Promo message="¡Usa el código SNEAKER20 para un 20% de descuento!" />}
         </div>
         <div className="hero-highlight">
           <p className="highlight-label">Today&apos;s highlight</p>

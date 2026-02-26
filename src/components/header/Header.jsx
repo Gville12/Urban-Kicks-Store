@@ -26,6 +26,9 @@ function Header() {
           <Link to="/contact" className="nav-link">
             Contact
           </Link>
+          <Link to="/forum" className="nav-link">
+            Forum
+          </Link>
         </nav>
 
         <div className="header-cta">
