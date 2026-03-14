@@ -203,8 +203,8 @@ To match the assignment requirements, you can use the following simple branching
 Below is the screenshot using an RSS Feed Reader software (Showing the local `/feed.xml` import pointing to the Home page):
 
 ![RSS Reader Screenshot]
-([public/screenshot1.png])
-([public/screenshot2.png])
+(public/screenshot1.png)
+(public/screenshot2.png)
 
 
 ---
