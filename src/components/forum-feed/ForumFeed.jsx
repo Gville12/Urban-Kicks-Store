@@ -170,7 +170,6 @@ function ForumFeed() {
                 </div>
               </div>
             ) : (
-              /* NORMAL VIEW MODE */
               <>
                 <h2 className="post-title">{post.title}</h2>
                 <p className="post-category">{post.category}</p>

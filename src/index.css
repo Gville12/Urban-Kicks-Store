@@ -21,20 +21,17 @@
 
 body.dark-mode {
   --bg-color: #1e2227;
-  /* Softer dark slate */
   --text-color: #e5e7eb;
   --subtitle-color: #9ca3af;
   --primary-color: #a78bfa;
   --card-bg: #282c34;
-  /* Slightly lighter card bg */
   --border-color: #3f4451;
   --footer-bg: #111827;
-  /* Solid dark footer */
   --footer-text: #9ca3af;
   --footer-heading: #f3f4f6;
 }
 
-/* Dark mode filter for Leaflet Maps */
+
 .dark-mode .leaflet-container {
   filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
 }
