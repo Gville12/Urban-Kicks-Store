@@ -8,7 +8,7 @@ function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check initial preference from localStorage
+
     const savedMode = localStorage.getItem("darkMode");
     if (savedMode === "true") {
       setIsDarkMode(true);
