@@ -1,12 +1,50 @@
 :root {
+  --bg-color: #faf5ff;
+  --text-color: #4c1d95;
+  --subtitle-color: #6b21a8;
+  --primary-color: #7c3aed;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --footer-bg: linear-gradient(135deg, #5b21b6 0%, #4c1d95 100%);
+  --footer-text: #e9d5ff;
+  --footer-heading: #ffffff;
+
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #4c1d95;
-  background-color: #faf5ff;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.dark-mode {
+  --bg-color: #1e2227;
+  /* Softer dark slate */
+  --text-color: #e5e7eb;
+  --subtitle-color: #9ca3af;
+  --primary-color: #a78bfa;
+  --card-bg: #282c34;
+  /* Slightly lighter card bg */
+  --border-color: #3f4451;
+  --footer-bg: #111827;
+  /* Solid dark footer */
+  --footer-text: #9ca3af;
+  --footer-heading: #f3f4f6;
+}
+
+/* Dark mode filter for Leaflet Maps */
+.dark-mode .leaflet-container {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.dark-mode .leaflet-tile {
+  filter: brightness(0.6) invert(100%) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.dark-mode .leaflet-container .leaflet-tile-pane {
+  filter: brightness(0.6) invert(100%) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
 }
 
 *,
@@ -19,7 +57,9 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #faf5ff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {

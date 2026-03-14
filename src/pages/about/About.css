@@ -11,12 +11,12 @@
 .about-title {
   font-size: 2rem;
   margin: 0 0 0.75rem;
-  color: #4c1d95;
+  color: var(--text-color);
 }
 
 .about-subtitle {
   font-size: 1rem;
-  color: #6b21a8;
+  color: var(--subtitle-color);
   max-width: 36rem;
   margin: 0;
 }
@@ -30,9 +30,9 @@
 .about-card {
   flex: 1 1 260px;
   border-radius: 1.25rem;
-  border: 1px solid #eeeeee;
+  border: 1px solid var(--border-color);
   padding: 1.5rem 1.75rem;
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -44,13 +44,13 @@
 .about-card-title {
   margin: 0 0 0.75rem;
   font-size: 1.15rem;
-  color: #5b21b6;
+  color: var(--text-color);
 }
 
 .about-card-text {
   margin: 0;
   font-size: 0.95rem;
-  color: #6b21a8;
+  color: var(--subtitle-color);
 }
 
 @media (max-width: 700px) {
@@ -58,4 +58,3 @@
     padding-top: 4.5rem;
   }
 }
-

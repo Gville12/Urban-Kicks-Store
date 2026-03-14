@@ -135,6 +135,16 @@ Some examples of clean code and UX decisions applied in the project:
 
 ---
 
+## ⭐ Advanced Features
+
+To maximize the project grade, the following 3 interactive React features have been implemented from scratch:
+
+1. **Professional Dark Mode**: A persistent theme switcher (sun/moon SVG icons) that uses a sleek slate-grey palette. It includes **custom CSS filters for the Leaflet Map**, ensuring the entire UI remains cohesive in dark mode.
+2. **Interactive Sneaker Slider**: A custom-built horizontal carousel on the Home page that allows users to navigate through featured products with smooth transitions and responsive logic.
+3. **Sneaker Match Mini-game**: An algorithmic quiz that recommends the ideal sneaker from the database based on user preferences, demonstrating complex conditional rendering and array filtering.
+
+---
+
 ## 🎨 Design Reference (Figma)
 
 The visual design and layout inspiration for this project is based on the following Figma community file:
@@ -182,6 +192,22 @@ To match the assignment requirements, you can use the following simple branching
 3. Use `develop` for ongoing changes and create pull requests into `main` when features are ready.
 
 > When you submit the assignment, remember to provide **only the GitHub repository URL** in the platform, as requested in the instructions.
+
+---
+
+## 🔗 Firebase Hosting Deployment
+> **Live Project Link**: https://urban-kicks-store.web.app
+
+
+## 📸 RSS Reader Demonstration
+Below is the screenshot using an RSS Feed Reader software (Showing the local `/feed.xml` import pointing to the Home page):
+
+![RSS Reader Screenshot]
+([public/screenshot1.png])
+([public/screenshot2.png])
+
+
+---
 
 # React + Vite
 

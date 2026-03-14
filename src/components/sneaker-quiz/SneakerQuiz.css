@@ -1,0 +1,136 @@
+.sneaker-quiz-container {
+    background: var(--card-bg);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.quiz-header {
+    margin-bottom: 2rem;
+}
+
+.quiz-badge {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.quiz-title {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 0 0 0.5rem;
+}
+
+.quiz-subtitle {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.quiz-question-card {
+    background: var(--bg-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.question-counter {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.question-text {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.options-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quiz-option-btn {
+    background: var(--card-bg);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.quiz-option-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.quiz-result-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.result-title {
+    font-size: 1.75rem;
+    color: #10b981;
+    margin: 0;
+}
+
+.result-sneaker {
+    max-width: 300px;
+    width: 100%;
+}
+
+.quiz-reset-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.quiz-reset-btn:hover {
+    background: var(--bg-color);
+}
+
+@media (max-width: 600px) {
+    .sneaker-quiz-container {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+    }
+
+    .options-grid {
+        flex-direction: column;
+    }
+}

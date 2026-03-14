@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>UrbanKicks RSS Feed</title>
+  <link>https://urbankicks-store.web.app</link>
+  <description>Latest news and drops from UrbanKicks</description>
+
+  <item>
+    <title>New Release: Night Pulse 90</title>
+    <link>https://urbankicks-store.web.app/home</link>
+    <description>Discover the retro chunky silhouette with a bold street style.</description>
+    <pubDate>Mon, 15 Mar 2026 10:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Limited Restock: Urban Street Runner</title>
+    <link>https://urbankicks-store.web.app/home</link>
+    <description>The lightest sneakers are back in stock for a limited time.</description>
+    <pubDate>Tue, 16 Mar 2026 12:30:00 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Special Offer: 20% Discount</title>
+    <link>https://urbankicks-store.web.app/home</link>
+    <description>Use the code SNEAKER20 this weekend for exclusive sales.</description>
+    <pubDate>Wed, 17 Mar 2026 09:15:00 GMT</pubDate>
+  </item>
+
+</channel>
+
+</rss>

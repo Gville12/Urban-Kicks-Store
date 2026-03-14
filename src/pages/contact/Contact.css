@@ -12,12 +12,12 @@
 .contact-title {
   font-size: 2rem;
   margin: 0 0 0.75rem;
-  color: #4c1d95;
+  color: var(--text-color);
 }
 
 .contact-subtitle {
   font-size: 1rem;
-  color: #6b21a8;
+  color: var(--subtitle-color);
   margin: 0;
 }
 
@@ -37,9 +37,9 @@
 
 .contact-block {
   border-radius: 1.25rem;
-  border: 1px solid #eeeeee;
+  border: 1px solid var(--border-color);
   padding: 1.25rem 1.5rem;
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   transition: border-color 0.2s;
 }
 
@@ -50,13 +50,13 @@
 .contact-block-title {
   margin: 0 0 0.75rem;
   font-size: 1.1rem;
-  color: #5b21b6;
+  color: var(--text-color);
 }
 
 .contact-text {
   margin: 0.1rem 0;
   font-size: 0.95rem;
-  color: #6b21a8;
+  color: var(--subtitle-color);
 }
 
 .contact-hours {
@@ -66,7 +66,7 @@
 .contact-map-wrapper {
   border-radius: 1.25rem;
   overflow: hidden;
-  border: 1px solid #eeeeee;
+  border: 1px solid var(--border-color);
 }
 
 .map {
@@ -78,9 +78,9 @@
 .contact-form-wrapper {
   flex: 1 1 320px;
   border-radius: 1.25rem;
-  border: 1px solid #eeeeee;
+  border: 1px solid var(--border-color);
   padding: 1.5rem 1.75rem 1.75rem;
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   transition: border-color 0.2s;
 }
 
@@ -90,13 +90,13 @@
 
 .contact-form-title {
   margin: 0 0 0.75rem;
-  color: #5b21b6;
+  color: var(--text-color);
 }
 
 .contact-form-text {
   margin: 0 0 1.5rem;
   font-size: 0.9rem;
-  color: #6b21a8;
+  color: var(--subtitle-color);
 }
 
 .contact-form {
@@ -122,23 +122,25 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #7c3aed;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .form-input,
 .form-textarea {
   border-radius: 0.75rem;
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border-color);
   padding: 0.55rem 0.75rem;
   font-size: 0.9rem;
   font-family: inherit;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
@@ -151,10 +153,10 @@
   align-self: flex-start;
   margin-top: 0.5rem;
   border-radius: 999px;
-  border: 1px solid #7c3aed;
+  border: 1px solid var(--primary-color);
   padding: 0.6rem 1.4rem;
   font-size: 0.9rem;
-  background-color: #7c3aed;
+  background-color: var(--primary-color);
   color: #ffffff;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -175,4 +177,3 @@
     padding-top: 4.5rem;
   }
 }
-
