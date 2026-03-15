@@ -1,35 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { 
+  collection, 
+  addDoc, 
+  deleteDoc, 
+  doc, 
+  updateDoc, 
+  onSnapshot, 
+  query, 
+  orderBy 
+} from "firebase/firestore";
+import { db } from "../../firebase";
 import "./ForumFeed.css";
 
-const initialPosts = [
-  {
-    id: "1",
-    title: "Review: Urban Street Runner",
-    category: "Reviews",
-    author: "SneakerHead99",
-    content: "I've been wearing these sneakers for a week and the comfort is unreal. Highly recommended for the city.",
-    date: "2026-03-10"
-  },
-  {
-    id: "2",
-    title: "Looking for Night Pulse 90 (Size 42)",
-    category: "Trade",
-    author: "UrbanKicks Fan",
-    content: "I have unworn Air Flex Lites in their box. Anyone up for a clean trade for the Night Pulse?",
-    date: "2026-03-12"
-  },
-  {
-    id: "3",
-    title: "New drops of the season",
-    category: "News",
-    author: "Admin",
-    content: "Stay tuned this weekend, we will release limited stock of the new collaboration. Don't miss out!",
-    date: "2026-03-14"
-  }
-];
-
 function ForumFeed() {
-  const [posts, setPosts] = useState(initialPosts);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
   const [newPost, setNewPost] = useState({ title: "", category: "General", content: "" });
@@ -37,58 +22,92 @@ function ForumFeed() {
   const [editingPostId, setEditingPostId] = useState(null);
   const [editFormData, setEditFormData] = useState({ title: "", category: "", content: "" });
 
+  useEffect(() => {
+    const q = query(collection(db, "posts"), orderBy("date", "desc"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const postsData = [];
+      querySnapshot.forEach((doc) => {
+        postsData.push({ id: doc.id, ...doc.data() });
+      });
+      setPosts(postsData);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const filteredPosts = posts.filter(post =>
     post.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // CREATE
-  const handleAddPost = (e) => {
+  const handleAddPost = async (e) => {
     e.preventDefault();
     if (!newPost.title || !newPost.content) return;
 
-    const postToAdd = {
-      id: Date.now().toString(),
-      title: newPost.title,
-      category: newPost.category,
-      author: "SneakerLover (You)",
-      content: newPost.content,
-      date: new Date().toISOString().split('T')[0]
-    };
+    try {
+      const postToAdd = {
+        title: newPost.title,
+        category: newPost.category,
+        author: "SneakerLover (You)",
+        content: newPost.content,
+        date: new Date().toISOString()
+      };
 
-    setPosts([postToAdd, ...posts]);
-    setNewPost({ title: "", category: "General", content: "" });
+      await addDoc(collection(db, "posts"), postToAdd);
+      setNewPost({ title: "", category: "General", content: "" });
+    } catch (error) {
+      console.error("Error adding post: ", error);
+      alert("Error adding post. Check your Firestore rules.");
+    }
   };
 
-  const handleDeletePost = (id) => {
-    setPosts(posts.filter(post => post.id !== id));
+  const handleDeletePost = async (id) => {
+    try {
+      await deleteDoc(doc(db, "posts", id));
+    } catch (error) {
+      console.error("Error deleting post: ", error);
+    }
   };
 
-  // START EDITING
   const handleEditClick = (post) => {
     setEditingPostId(post.id);
     setEditFormData({ title: post.title, category: post.category, content: post.content });
   };
 
-  // CANCEL EDITING
   const handleCancelEdit = () => {
     setEditingPostId(null);
   };
 
-  // SAVE UPDATE
-  const handleSaveEdit = (id) => {
-    setPosts(posts.map(post =>
-      post.id === id
-        ? { ...post, title: editFormData.title, category: editFormData.category, content: editFormData.content }
-        : post
-    ));
-    setEditingPostId(null);
+  const handleSaveEdit = async (id) => {
+    try {
+      const postRef = doc(db, "posts", id);
+      await updateDoc(postRef, {
+        title: editFormData.title,
+        category: editFormData.category,
+        content: editFormData.content
+      });
+      setEditingPostId(null);
+    } catch (error) {
+      console.error("Error updating post: ", error);
+    }
   };
+
+  if (loading) {
+    return (
+      <section className="forum-feed-section">
+        <div className="section-header">
+          <h2 className="section-title">Community Feed</h2>
+          <p className="section-subtitle">Loading posts...</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="forum-feed-section">
       <div className="section-header">
-        <h2 className="section-title">Community Feed (Local CRUD)</h2>
-        <p className="section-subtitle">Connect with other sneakerheads.</p>
+        <h2 className="section-title">Community Feed (Firebase CRUD)</h2>
+        <p className="section-subtitle">Connect with other sneakerheads. Real-time database enabled.</p>
       </div>
 
       <div className="forum-create-box">
@@ -143,54 +162,54 @@ function ForumFeed() {
             {editingPostId === post.id ? (
               <div className="edit-mode-form">
                 <input
-                  type="text"
-                  value={editFormData.title}
-                  onChange={e => setEditFormData({ ...editFormData, title: e.target.value })}
-                  className="form-input edit-input"
-                />
-                <select
-                  value={editFormData.category}
-                  onChange={e => setEditFormData({ ...editFormData, category: e.target.value })}
-                  className="form-input edit-input"
-                >
-                  <option value="General">General</option>
-                  <option value="News">News</option>
-                  <option value="Sneakers">Sneakers</option>
-                  <option value="Trade">Trade</option>
-                  <option value="Reviews">Reviews</option>
-                </select>
-                <textarea
-                  value={editFormData.content}
-                  onChange={e => setEditFormData({ ...editFormData, content: e.target.value })}
-                  className="form-textarea edit-input"
-                />
-                <div className="card-actions">
-                  <button onClick={() => handleSaveEdit(post.id)} className="btn-save">Save (Update)</button>
-                  <button onClick={handleCancelEdit} className="btn-cancel">Cancel</button>
-                </div>
-              </div>
-            ) : (
-              <>
-                <h2 className="post-title">{post.title}</h2>
-                <p className="post-category">{post.category}</p>
-                <p className="post-meta">By {post.author} on {post.date}</p>
-                <p className="post-content">{post.content}</p>
-
-                <div className="card-actions">
-                  <button onClick={() => handleEditClick(post)} className="btn-edit">Edit</button>
-                  <button onClick={() => handleDeletePost(post.id)} className="btn-delete">Delete</button>
-                </div>
-              </>
-            )}
-
-          </div>
-        ))}
-        {filteredPosts.length === 0 && (
-          <p style={{ gridColumn: "1 / -1", textAlign: "center", padding: "2rem" }}>No posts found for that category.</p>
-        )}
-      </div>
-    </section>
-  );
-}
-
-export default ForumFeed;
+                   type="text"
+                   value={editFormData.title}
+                   onChange={e => setEditFormData({ ...editFormData, title: e.target.value })}
+                   className="form-input edit-input"
+                 />
+                 <select
+                   value={editFormData.category}
+                   onChange={e => setEditFormData({ ...editFormData, category: e.target.value })}
+                   className="form-input edit-input"
+                 >
+                   <option value="General">General</option>
+                   <option value="News">News</option>
+                   <option value="Sneakers">Sneakers</option>
+                   <option value="Trade">Trade</option>
+                   <option value="Reviews">Reviews</option>
+                 </select>
+                 <textarea
+                   value={editFormData.content}
+                   onChange={e => setEditFormData({ ...editFormData, content: e.target.value })}
+                   className="form-textarea edit-input"
+                 />
+                 <div className="card-actions">
+                   <button onClick={() => handleSaveEdit(post.id)} className="btn-save">Save (Update)</button>
+                   <button onClick={handleCancelEdit} className="btn-cancel">Cancel</button>
+                 </div>
+               </div>
+             ) : (
+               <>
+                 <h2 className="post-title">{post.title}</h2>
+                 <p className="post-category">{post.category}</p>
+                 <p className="post-meta">By {post.author} on {new Date(post.date).toLocaleDateString()}</p>
+                 <p className="post-content">{post.content}</p>
+ 
+                 <div className="card-actions">
+                   <button onClick={() => handleEditClick(post)} className="btn-edit">Edit</button>
+                   <button onClick={() => handleDeletePost(post.id)} className="btn-delete">Delete</button>
+                 </div>
+               </>
+             )}
+ 
+           </div>
+         ))}
+         {filteredPosts.length === 0 && (
+           <p style={{ gridColumn: "1 / -1", textAlign: "center", padding: "2rem" }}>No posts found for that category.</p>
+         )}
+       </div>
+     </section>
+   );
+ }
+ 
+ export default ForumFeed;

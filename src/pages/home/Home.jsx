@@ -10,8 +10,6 @@ import "./Home.css";
 function Home() {
   const [showSpecial, setShowSpecial] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Responsive items logic for slider
   const [itemsPerView, setItemsPerView] = useState(3);
 
   useState(() => {

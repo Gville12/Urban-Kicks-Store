@@ -39,18 +39,16 @@ function SneakerQuiz() {
     };
 
     const calculateRecommendation = (finalAnswers) => {
-        // Simple mock logic: filter by criteria or just return a specific one based on combination
+
         let found = null;
         if (finalAnswers.style === "sport" && finalAnswers.vibe === "modern") {
             found = sneakers.find(s => s.name.includes("Runner") || s.name.includes("Pulse"));
         } else if (finalAnswers.style === "casual" && finalAnswers.vibe === "retro") {
             found = sneakers.find(s => s.name.includes("Classic") || s.name.includes("Force"));
         } else {
-            // Fallback
             found = sneakers[0];
         }
 
-        // If our simple logic doesn't find a perfect match, return the first one
         setRecommendation(found || sneakers[0]);
         setStep(step + 1);
     };
@@ -90,7 +88,7 @@ function SneakerQuiz() {
 
                 {step === questions.length && recommendation && (
                     <div className="quiz-result-card">
-                        <h3 className="result-title">🎯 We found your match!</h3>
+                        <h3 className="result-title"> We found your match!</h3>
                         <div className="result-sneaker">
                             <DestinationCard
                                 title={recommendation.name}
